@@ -1,0 +1,99 @@
+Functions Javascrip
+
+	Write functions eclarations and functions expressions
+
+	Explain the difference between console.og and return
+
+	define functions that take multiple arguments
+
+	scope and higher order functions
+
+
+	Wat is a function?
+		function dosomething() {
+
+	console.log("hello World");
+		}
+
+	Fuctions can help DRY up the code.
+
+	You know what a function is from LUA
+
+Arguments
+ 	Example of an argument that squares a number (variable num)
+	Function square(num) {
+	console.log(num * num);
+	}
+
+	its a function that can take inputs in the parens
+
+	function sayHello(){
+	console.log("hello there!");
+	}
+
+	function sayHello(name){
+	console.log("hello there " + Name + "!")
+	}
+
+
+	Functions can have as many arguments as needed. They are seperated by commas
+		Example
+
+		Function greet(person1, person2, person3){
+		console.log("hi" + person1);
+		console.log("hi" + person2);
+		console.log("hi" + person3);
+		}
+
+	calling this function with the following paramters:
+
+		greet("harry", "ron", "Hermione"):
+
+	will return
+		hi harry
+		hi ron
+		hi hermoine
+
+The Return Keyword
+	Returns data from functions in a meaningful way, so other elements of your program can interact with that returned data
+
+	example function using the return keyword:
+
+	function square(x)	{
+	return x * x;
+	}
+
+	you can go on to assign those values to variables or what have you
+	exampe:
+
+	var result = square(4)
+
+	Now result is equal to 16
+
+	Once the Return takes place, the function completes, so any subsquent code would not be executed within that function.
+
+		For example:
+		function test(x) {
+		return x*2;
+		console.log(x);
+		return x/2;
+		}
+
+		Then calling the function with the following code:
+		test(40);
+
+		would only return
+		80
+
+		as the first time a return takes place no further code in the function is executed
+
+there are two ways to Declare a function
+	Function Declaration
+		function capitalize(str) {
+		return str.charAt(0).toUpperCase() + str.slice(1);
+		}
+
+	Fuction Expression
+		var capitalize = function(str) {
+		return str.charAt(0).toUpperCase() + str.slice(1);
+		}
