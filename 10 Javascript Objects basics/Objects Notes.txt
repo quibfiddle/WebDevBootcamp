@@ -1,0 +1,156 @@
+Objects
+
+	Understand objects conceptually
+
+		An object is a varriable with assigned fields. See the example code:
+
+				var person = {
+				name: "Cindy",
+				age: 21,
+				city: "LA"
+				};
+
+			Unlike an array, objects have not set order, they just have values the following code is functionally the same as above, the field order does not matter
+
+				var person = {
+				age: 21,
+				city: "LA",
+				name: "Cindy"			
+				};
+
+			we can pull information out of objects a few different ways:
+
+			Bracket notation
+				console.log(person["name"]);
+
+			Dot Notation
+				console.log(person.name);
+
+			either of this snipets of code will return the name key of the person object.
+
+				while the dot notation is quicker, you can not use it all the time. Here are some cases were dot notation will not work:
+
+					if the key to be retrieved has a number
+
+						person.1staddress is not valid code, and would have to be written
+						person["1staddress"]
+
+					if the key has a space in it
+
+						person.how old would not work either, write it like:
+						person["how old"]
+
+					If we want to use a variable key, like searching for the name field
+
+						var str = "name";
+
+						person[str] will use the variable str, and look for person["name"] 
+
+			Data for Objects can be updated my like data in Arrays.
+
+				var person = {
+				name: "travis";
+				age: 21,
+				city: "LA"
+				};
+
+				person["age"] += 1;
+
+				\\this will increment the age key by 1, 21 > 22
+
+				person.city = "London";
+
+				\\this will change the City key to London. LA > London
+
+			Objects can be created a few different ways:
+
+				just creating a blank object, then assigning keys after the fact:
+
+					var person = {}
+
+					person.name = "Travis";
+					person.age = 21;
+					person.city = "LA";
+
+				Or creating the Object and the keys at the same time
+
+					Var person = {
+						name: "Travis",
+						age: 21,
+						city: "LA"
+					}
+
+			Objects can hold any kind of information: numbers, strings, booleans, arrays, or more objects
+
+	write code using JS objects
+
+		Exercises:
+			Evaluate the following object, and guess what keys it will end up having
+
+			var someObject = {};
+
+			someObject._name = "hedwig";
+			someObject.age = 6;
+
+			var prop = "color";
+
+			someObject[prop] = "red";
+			someObject.123 = true
+
+				someObject will get the _name key, and it will be set to "Hedwig"
+				age key, and it will bbe set to 6
+				someObject will have a color key and it will be set to "red"
+				someObject will not ket a 123 key, as you cant start dot notation with a number
+
+			Write code to retrieve Malfoy from someObject
+
+			var someObject = {
+				friends: [
+					{name: "Malfoy"},
+					{name: "Crabbe"},
+					{name: "Goyle"}
+				],
+				color: "baby blue",
+				isEvil: true
+			}
+
+			someObject.friends[0].name
+
+Javascript Methods
+
+	objects can have any values assign to their keys, and when a function is one of the assigned keys, you call that function a Method.
+
+	Check out the follow code yo:
+
+		var person = {
+			name: "Tiki"
+			age: 2603,
+			isCool: true,
+			friends: ["Nowi", "Fae"],
+			add: function(x,y){
+				return x + y;
+			}
+		}
+
+	notice how the last Key in that object is a function. OH SNAP. calling it works just like calling up an array within an object, but you need to pass arguments to the method.
+
+		person.add(10,5);
+
+		will return 15
+
+	Adding functions as Key values in objects allow you to organize your code in a logical way. For example, you can have functions with the same general name, and call them up as part of their parent object, and not worry about namespace colision
+
+		var dogs = {
+			speak: function(){
+			return "WOOF!"
+			}
+		}
+
+		var cats = {
+			speak: function(){
+			return "MEOW!"
+			}
+		}
+
+	With the above code, you can pull cats.speak() and get a different result that dogs.speak().
+
