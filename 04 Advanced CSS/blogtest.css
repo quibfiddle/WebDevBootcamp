@@ -1,0 +1,41 @@
+body {
+	border: 25px solid #4b5793;
+	font-family: 'Titillium Web', sans-serif;
+	max-width: 700px;
+	width:80%;
+	margin: 20px auto;
+}
+
+p {
+	margin-right: 4%;
+	margin-left: 4%
+}
+
+h3 {
+	margin:2%;
+	color: gray;
+	text-transform: uppercase;
+	letter-spacing: .2rem;
+}
+
+h1 {
+	margin:2%;
+	font-weight: bold;
+}
+
+h1 + p:nth-of-type(1) {
+	border-left: 7px solid #4b5793;
+	padding-left: 4px;
+
+}
+
+hr {
+	margin-right: 4%;
+	margin-left: 4%;
+	height: 2px;
+	border: 0;
+    background: black;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(white), color-stop(50%, black));
+}
+
+url("//b.thumbs.redditmedia.com/-_vvO_c5n-YsZjVh8Uq8AaR_7IAeZ0R2WgCyIDN5Utg.png")

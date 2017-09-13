@@ -1,0 +1,238 @@
+3 main objectives Arrays
+
+	Objective 1: Define arrays, add and remove data from arrays
+
+	Utilize built in array Methods
+
+	Console Todo List
+
+Array data structure
+	Arrays are like a way of storing a bunch of related variables at once. compare the two following examples, 4 variables for friends, or the friends Array
+
+	the variable method:
+
+	var friend1 = "Charlie";
+	var friend2 = "Liz";
+	var friend3 = "david";
+	var friend4 = "mattias";
+
+	the Array method:
+
+	var friends = ["Charlie", "Liz", "David", "Mattias"];
+
+	Arrays are indexed starting at 0, so in this friends array, Charlie is 0, Liz is 1, and so on
+
+	you can call up a particular part of an array by referencing the variable with [] at the end of the array, again referencing the friends array
+
+	console.log(friends[0]) would output "Charlie" to the console
+
+	or
+
+	friends[1] = " <3 " + friends[2] would output "liz <3 David"
+
+
+	You can change values in an Array just like you can with varrialbes, like so
+
+	var friends[0] = "Chuck";
+
+	would change the 0 slot of our friends array from "Charlie" to "Chuck".
+
+	To add variables to an Array, just select a new numerical index; with our friends index that has 4 items, the index goes from 0 to 3, so we would use 4.
+
+	friends[4] = "Xander";
+
+	would add "Xander" to the array at index 4.
+
+Different ways of Defining arrays
+
+	The way known now:
+
+	var friends = [];
+
+	Slightly different but still correct syntax:
+
+	var friends = new Array()
+
+Built in Array Methods (only covering 6 built in methods but there are quite a few)
+	
+	Push/Pop
+
+		Push will add something to the end of an array. the code we did earlier with the friends array to add Xander at array index 4 could also be coded this way, and we would not need to know the value of that index:
+
+		friends.push("Xander");
+
+		Pop removes the last item in an array. Running the following code would remove Xander from the array
+
+		friends.pop()
+
+		You do not need to pass an argument to the pop method, it just removes the last item in the array.
+
+	Shift/Unshift
+
+		Shift and Unshift Are like Push and Pop, except the add or remove the values from the begining of the array, and move all the following array index items up or down.
+
+		For whatever reason Unshift is the one that adds items, and shift is the one that deletes the first item. Running the following code would change the friends array in this way:
+
+		var friends = ["Charlie", "Liz", "David", "Mattias"];
+
+		friends.unshift("Lucina");
+
+		Now the array looks like this:
+
+		var friends = ["Lucina" "Charlie", "Liz", "David", "Mattias" "Charlie"]
+
+		running friends.shift(); would cause lucina to be removed from the array, and all the subsequent array items would be moved back over (there is not an undefined space were the deleted array items was.)
+
+	indexOf
+
+		Can be used to evaluate an Array for a certain value. For example:
+
+		var friends = ["Charly", "Liz", "David", "Mattias" "Charly"]
+
+		friends.indexOf("David"); 
+
+		will return 2, because "David" has an array index of 2.
+
+		Note indexOf will only return the first instance of that value, Charly is in this array twice so running
+
+		friends.indexOf("Charly")
+
+		will return 0, even though Charly is indexed at 0 and at 4
+
+		looking for a value that is not part of the array should return -1. So running something like
+
+		friends.indexOf("Donatello")
+
+		will return -1
+
+
+	slice
+
+		lets you slice out segments of an existing array and assign those values to a new array. Check out the example yo'
+
+		var friends = ["Charly", "Liz", "David", "Mattias" "Edgar"];
+
+		var bffs = friends.slice(1,4);
+
+		using this code will create an array called bffs that looks like this:
+
+		["Liz", "David", "Mattias"]
+
+		Note that even though the arguments you are passing to slice is (1,4) the 4th index value in the sliced array is not included, it just slices out the 1, 2 and 3 index items (it is not inclusive)
+
+		if you pass no arguments to slice, it will just copy the array you are running this method against.
+
+Arrays can be nested
+
+	They look like this:
+
+	var friendGroups = [
+	["Harry", "Ron", "Hermione"]
+	["Malfoy", "Crabbe", "Goyle"]
+	["Mooney", "wormtail", "Prongs"]
+	];
+
+	you can call up information from nested arrays like so:
+
+	friendGroups[2]
+
+	would return ["Mooney", "wormtail", "Prongs"]
+
+	friendGroups[2][0]
+
+	would return "Mooney"
+
+
+Array Itteration
+
+	Use a for loop to iterate over an array
+
+		This for loop will have the console log each item in the array. 
+
+		var colors = ["red", "orange", "yellow", "green"];
+
+		for(var i=0; i< colors.length; i++) {
+			console.log(colors[i]);
+		}
+
+		the output would start at index 0, and work its way up to colors.length value of the colors array (3) and stop, returning console.log(colors[i]) at each step:
+
+			"red"
+			"orange"
+			"yellow"
+			"green"
+
+	Use forEach to iterate over an array
+
+		JavaScript also has a built-in way of iterating over an array: the method .forEach(someFunction)
+
+		var colors = ["red", "orange", "yellow", "green"];
+
+		colors.forEach(function(color){
+			console.log(color);
+		});
+
+		in this code example, the words function and color can be whatever. What is important to understand is what is happening. The .forEach() creates a function (in this case its called function, YAY), and that function has a variable that you can pass to it (in this case color). 
+
+			forEach then runs the function with the color variable each time for each index item of the array colors, and the variable changes to the next array value each time it iterates
+
+			the output of that code would be 4 console logs:
+
+			"red"
+			"orange"
+			"yellow"
+			"green"
+
+Exercise
+	What does the following code print out?
+
+	var numbers = [1,2,3,4,5,6,7,8,9,10];
+	var colors = ["red", "orange", "yellow", "green"];
+
+	numbers.forEach(function(color) {
+		if(color% 3 === o){
+		console.log(color);
+		}
+	});
+
+	the .forEach runs function using each value in the numbers array, and checks to see if the value of each array item is divisible by 3. The variable for each array item is called color for some stupid reason.
+
+	it will print out 3 6 and 9 in the console.
+
+	This code can be rewritten using a for loop, like so
+
+	var numbers = [1,2,3,4,5,6,7,8,9,10];
+	var colors = ["red", "orange", "yellow", "green"];
+
+	for(var i=0; i< numbers.length; i++) {
+		if(numbers[i]% 3 === 0) {
+		console.log(numbers[i])
+		}
+
+Manual creation of forEach()
+
+	the syntax for using the built in method forEach() on a given array looks like this
+
+	var nums = [1, 2, 3, 4]
+
+	nums.forEach(function(num){
+		console.log(num);
+	});
+
+	which will print to the console the following information:
+
+	1
+	2
+	3
+	4
+
+	if we wanted to do the same thing, using our own function it would probably look something like this:
+
+	function myForEach(arr, function(num){
+			console.log(num)
+			}) {
+		for(var i = 0; i < arr.length; i++){
+		function(arr[i]);
+		}
+
+	}
