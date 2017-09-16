@@ -1,0 +1,32 @@
+DOM Events
+	Events can be everywhere; clicking on a button, hovering over a link, dragging and dropping pressing a key.
+
+	We select an element and then add an event listenr to that element
+
+		"listen for a click on <button>"
+
+		"Listen for a hover event on the <h1>"
+
+	To do this we use the method called addEventListener
+
+		element.addEventListener(type, functionToCall);
+
+	Look at its use in the following code:
+
+		HTML
+
+			<button>Click Me</button>
+			<p>No One Has Clicked Me Yet</p>
+
+		JS
+
+			var button = document.querySelector("button");
+			var paragraph = document.querySelector("p");
+
+		button.addEventListener("click", function(){
+			paragraph.textContent = "Someone Clicked the Button!";
+		})
+
+	So a quick recap of what this code does: The querySelector method us used to assign button and paragraph variables, and then the event listener is added to the button variable, which listens for a click. Once that takes place, the Do of the event listener takes place, which changes the paragraph.textContent value to "someone CLicked the Button!
+
+	
