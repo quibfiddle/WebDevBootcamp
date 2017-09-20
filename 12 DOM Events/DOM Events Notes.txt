@@ -30,3 +30,20 @@ DOM Events
 	So a quick recap of what this code does: The querySelector method us used to assign button and paragraph variables, and then the event listener is added to the button variable, which listens for a click. Once that takes place, the Do of the event listener takes place, which changes the paragraph.textContent value to "someone CLicked the Button!
 
 	
+	You can add a series of event listeners to a set of given objects using a loop:
+
+		for(var i = 0, i < lis.length; i++){
+		lis[i].addEventListener("click", function(){
+		this.style.color = "pink";
+		});
+		}
+
+	This code will add a click event listener to all the objects in the lis object, So say if you assigend a varriable that has all the LIs in a UL this loop will go through and add to each listener a 
+
+	I am probably going to declare my functions outright, instead of using anonomys functions in my addEventListener method calls. Like SO:
+
+		function changeText() {
+		paragraph.textContent = "Somone Clicked the Button!";
+		}
+
+		button.addEventListener("click", changeText);
