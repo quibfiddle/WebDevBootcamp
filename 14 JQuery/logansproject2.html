@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+<meta charset="utf-8">
+<title></title>
+</head>
+<body>
+<div class=container>
+<!-- The above form looks like this -->
+<form>
+ <div class="row">
+   <div class="four columns">
+     <label for="number1">Input Value One</label>
+     <input class="u-full-width" type="number" placeholder="0" id="number1">
+   </div>
+<div class="four columns">
+<label for="number1">Input Value Two</label>
+<input class="u-full-width" type="number" placeholder="0" id="number2">
+</div>
+
+
+<div class="four columns">
+<label for="operation">Operation</label>
+<select class="u-full-width" id="operation">
+<option value="Option 1">Add</option>
+<option value="Option 2">Subtract</option>
+<option value="Option 3">Multiply</option>
+<option value="Option 3">Divide</option>
+</select>
+</div>
+ </div>
+ <input class="button-primary" type="submit" value="Submit">
+</form>
+<div class="row">
+<div align="center" class="twelve columns">
+<h1  id="result"> Result </h1>
+</div>
+</div>
+</div>
+
+<!-- Always wrap checkbox and radio inputs in a label and use a <span class="label-body"> inside of it -->
+
+<!-- Note: The class .u-full-width is just a utility class shorthand for width: 100% -->
+</body>
+
+<script type="text/javascript" src="math.js"></script>
+
+</html>

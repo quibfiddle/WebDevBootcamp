@@ -1,0 +1,110 @@
+jQuery
+ jQuery is the most popular javascript Library. it helps us with by letting us leverage a library of prewritten code and include it in our project
+
+ Should you use jQuery?
+ 	youmightnotneedjquery.com has all the methods referenced in jQuery so you can copy and paste the code of a given method 
+
+ 	jQuery fixes "broken" DOM API
+
+ 	Brevity and Clarity
+
+ 	Ease of use
+
+ 	Cross-Browser Support
+
+ 	AJAX
+
+ 	Lot's of people use Jquery
+
+Why Not Use JQuery?
+	The DOM API is no longer "Broken"
+
+	It Doesn't do anything you can't do on your own
+
+	it's an unnecessary dependency
+
+	Performance
+
+	Lot's of people are moving away from jQuery!
+
+Adding jQuery is done by linking to it in the html
+	<script type="text/javascript" src="jquery.js"></script>
+
+	or link to a cdn like
+	src="https://code.jquery.com/thisistheurl/ofthecn
+
+When you have jQuery associated with your page you can write your JS file a little differently, and call up objects using this syntax:
+
+	//whena user clicks the button with id "trigger"
+
+	$('#trigger').click(fuction(){
+
+	//change the body's background to yellow
+	$('body').css("background", "yellow");
+
+	//fade out all img's over 3 seconds
+	$('img').fadeOut(3000, function(){
+
+		//remove imgs from page when fadeOut is done
+		$.(this).remove();
+	});
+
+	});
+
+Selecting withjQery
+	$('selectorGoesHere')
+
+	pretty much selecting ites for manipulation leveraging jquery is like the querySelectorAll function in vanilla JS, where you use a method with your CCS style selector as an argumrnent, and it will select ll matching elements.
+
+	some examples:
+
+		select all img tags:
+
+			$("img")
+
+		select all elements with the class sale
+
+			$(".sale")
+
+		select element with id "bonus"
+
+			$("#bonus")
+
+		select all a tags inside of li's
+
+			$("li a")
+
+
+Manipulating Style
+	the .css() method is jquery interfaceis for styling stuff.
+
+	$(selector).css(property, value)
+
+	Some example code: chaning all H1s to have a coloration of yellow
+
+
+		$("h1").css("color", "yellow");
+
+	the .css() method can also accept objects, which is pretty sweet. Look at the following code
+
+		var styles = {
+		color: "red";
+		background: "pink"
+		border: "2px solid purple"
+		}
+
+		$("h1").css(styles)
+
+	the above code will change all thos css values for the h1
+
+	You can style multiple elements at once using jQuery. the following code will style all li's
+
+		$("li").css("color: blue;");
+
+	this is because $() returns your selected element as an oject, and css() will loop through and style each object in that way. for comparison if we wanted to style all the li objects using vanilla js it would use a for loop sorta like
+
+		var lis = document.querySelectorAll("li")
+
+		for(i=0; i < lis.length; i++){
+		lis[i].style.color = "blue"
+		}
