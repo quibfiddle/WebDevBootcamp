@@ -1,5 +1,7 @@
 Body {
 	background: #232323;
+	margin: 0;
+	font-family: "Arial Black";
 }
 
 .square {
@@ -8,15 +10,30 @@ Body {
 	padding-bottom: 30%;
 	float: left;
 	margin: 1.66%;
+	/* gives rounded corners */
+	border-radius: 12%;
+	/* when the background property changes, it transitions over the course of .5 seconds */
+	transition: background 0.5s;
+	-webkit-transition: background 0.5s;
+	-moz-transition: background 0.5s;
 }
 
 #container {
 	max-width: 600px;
-	margin: 0 auto;
+	margin: 20px auto;
 }
 
 h1 {
 	color: white;
+	text-align: center;
+	background: steelblue;
+	margin: 0;
+	font-weight: normal;
+	text-transform: uppercase;
+	/*reduces the spacing between the brakes in the h1 */
+	line-height: 1.1;
+	/* padds the top and bottom by 20px, and the left and right by 0 */
+	padding: 20px 0;
 }
 
 #stripe {
@@ -24,4 +41,39 @@ h1 {
 	height: 30px;
 	text-align: center;
 	color: black;
+}
+
+.selected {
+	color: white;
+	background: steelblue;
+}
+
+#colorDisplay{
+	font-size: 180%;
+}
+
+button {
+	border: none;
+	background: none;
+	text-transform: uppercase;
+	height: 100%;
+	font-weight: 700;
+	color: steelblue;
+	letter-spacing: 1px;
+	font-size: inherit;
+	transition: all .3s;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+}
+}
+
+#message {
+	border-width: 40%;
+}
+
+/* Fun fact! you can get reactive elements using css: look at this hover biz */
+
+button:hover {
+	color: white;
+	background: steelblue;
 }
