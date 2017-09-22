@@ -1,0 +1,30 @@
+Body {
+	background: #232323;
+	margin: 0;
+	font-family: "Arial Black";
+}
+
+button {
+	border: none;
+	background: none;
+	text-transform: uppercase;
+	height: 100%;
+	font-weight: 700;
+	color: steelblue;
+	letter-spacing: 1px;
+	font-size: inherit;
+	transition: all .3s;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+}
+
+
+button:hover {
+	color: white;
+	background: steelblue;
+}
+
+#container {
+	max-width: 600px;
+	margin: 20px auto;
+}
