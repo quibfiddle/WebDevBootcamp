@@ -1,0 +1,33 @@
+Advanced jQuery
+	 There are a bunch of ways to add event listeners to an html document.
+
+	 here are some big ones:
+
+		 click()
+
+		 	quick and easy way to add a click listener to a given html element. it uses css selectors. so it would look like this:
+
+
+			 	$("#submit").click(function(){
+			 		some function stuff
+			 	})
+
+			 this code will select the html element with the id submit, and have it execute that anonomous function on the click event.
+
+		 keypress()
+
+		 	adds an element that listens for a keypress on a keyboard. using the following code you can return information about the key being pressed:
+
+		 		$("input").keypress(function(event){
+		 			return event.which
+		 		})
+
+		 		every keyboard input has an associated keycode. Here is a helpful website for firguing out the keycode:
+		 		http://keycode.info/
+		 		Honestly though, i could probably program a website that does exactly this knowing the logic up there. So im going to do that.
+
+		 on()
+
+
+	Other Thoughts:
+		this this. shortcut doesnt work in jquery, as jquery does not know by default to reference the var passed in the argument of a jquery function. Just use $(this) if you want to use that shortcut in a jquery function.
