@@ -28,6 +28,18 @@ Advanced jQuery
 
 		 on()
 
+		 	works similary to addEventListener, you have to specify what you are listening for, and then a function for what to do when that event takes place. check out the example code:
+
+		 		$('button').on('dblclick', function(){
+		 			alert("DOUBLE CLICKED!");
+		 		});
+
+		 		in the above code, an event listener is added to the button field using the on method. it is listening for a double click event. you could use 'click' or 'keypress' or whatever.
+
 
 	Other Thoughts:
 		this this. shortcut doesnt work in jquery, as jquery does not know by default to reference the var passed in the argument of a jquery function. Just use $(this) if you want to use that shortcut in a jquery function.
+
+
+jQuery Effects
+	useing the.fadeOut() method lets you animate the fading out of a given element.
