@@ -108,3 +108,29 @@ Manipulating Style
 		for(i=0; i < lis.length; i++){
 		lis[i].style.color = "blue"
 		}
+
+Common jQuery Methods
+
+	Documentation on jquery can be found at api.jquery.com
+
+	.text() behaves like conventional js .textContent
+
+	.html() behaves like htmlContent. Will change the the content of the html by passing an argument to it
+
+	.attr() gets the attributes of a given element, or sets depending on the argument passed to it.
+
+		to pass an argument to attr you need to use a comma; like so
+
+			$('img').css("width");
+
+		would return the width of the img objects,
+
+			$('img').css("width", "500px");
+
+		would change the width of the img object to 500px.
+
+	addClass() can return or add classes to an html element
+
+	removeClass() does the oposite of addClass()
+
+	toggleClass() checks to see if a given class is applied to an element and turns it on or off
