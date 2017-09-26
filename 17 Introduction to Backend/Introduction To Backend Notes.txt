@@ -1,0 +1,66 @@
+Backend Basics
+	Stuff you already know from cisco cert: When a user accesses a webpage, they type in a url, and that url is translated to an ip address of the server where the page is loaded. The server finds out what to respond with, adn send back the appropriate html css and javascript.
+
+	Two different types of websites:
+	Static vs Dynamic
+		Static websites always have the same HTML CSS and Javascript everytime, whereas a dynamic website will change dependong on what has been changed serverside.
+
+	the STACK:
+
+	backend Language app | Server | Database |
+
+	Frontent | HTML CSS JS
+
+	Pretty much, what technologies are used to run a website. The stack learned in The Web Developer is Node JS, Express and MongoDB
+
+http requests
+	When you go to a url in a browser, you send an HTTP request to a servers ip address, the server figures out how to respond, and the server sends the appropriate response. Using the PostMan extention we can see how http requests and responses behave on a lower level.
+
+	there are several different kinds of requests. Giving the server a specific request will let the server know how to respond.
+
+		GET
+
+			just retrieving information. Like going to google.com and seeing the search bar and the google logo.
+
+		POST
+
+			adding data to a website. Like creating a new user and password, creating a comment, or downvoting a shit post. Anything that would result in new information being added to a database.
+
+		PUT or PATCH
+
+			these requests change existing post data. Like chaning the name of a image album on facebook, or editing a coment submitted earlier
+
+		DELETE
+
+			when you send a request to delete something on the server. Like deleting a comment.
+
+	When you recive a response from the server over http, the included information is the payload, typically html css and javascript, and the headers that explain the detials of the response. below I copy and pasted the headers of the response i got form doing a get request from google.com
+
+		alt-svc →quic=":443"; ma=2592000; v="39,38,37,35"
+		
+		cache-control →private, max-age=0
+		
+		content-encoding →br
+		
+		content-type →text/html; charset=UTF-8
+		
+		date →Tue, 26 Sep 2017 18:23:39 GMT
+		
+		expires →-1
+		
+		p3p →CP="This is not a P3P policy! See https://	www.google.com/support/accounts/answer/151657?hl=en for more info."
+		
+		server →gws
+		
+		status →200
+		
+		strict-transport-security →max-age=86400
+		
+		x-frame-options →SAMEORIGIN
+		
+		x-xss-protection →1; mode=block
+
+	These headers just have details like, the time of the request, the contents of the payload and the status of the request.
+
+C9 is per cool
+	created an account. i wonder if they are going to charge me for it.
