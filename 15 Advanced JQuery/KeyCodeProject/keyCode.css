@@ -4,22 +4,17 @@
 	color: #3a3a3a;
 	text-align: center;
 	padding: 40px;
-	margin-right: 40%;
-	margin-left: 40%;
+	margin-top: 10%;
+	margin-right: 30%;
+	margin-left: 30%;
 	box-shadow: 4px 4px 3px #888888;
 
-}
-
-.container {
-	margin: 20%;
-	margin-bottom: 2%;
-	margin-top: 10%;
-	text-align: center;
 }
 
 h1 {
 	font-size: 300px;
 	color: #3a3a3a;
+	text-align: center;
 }
 
 #footer {
