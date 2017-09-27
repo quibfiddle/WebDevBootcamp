@@ -1,0 +1,4 @@
+	What is a Framework?
+		Framework is code somebody else wrote that you use in your application. It is unlike a library where we can assign it as a varriable and call it up. When we use a Framework, we use the control flow that is already in the framework, and you just fill in the predifined spots with our code.
+
+		express is the framework we are going to use. Its quite popular, and its a lightweight framework

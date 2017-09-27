@@ -1,0 +1,24 @@
+Command Line
+	a command breaks down into three fundamental parts, the utility, the flag and the argurments. from davidbaumgold.com:
+
+		ls -l ~/Desktop
+
+		Let's break this command down into parts:
+
+		ls is a utility. Utilities are also sometimes known as commands all on their own, because they indicate the general idea of what you want. Most of the time, you can simply run a utility all by itself, without any flags or arguments. Most commands only have one utility.
+		-l is a flag that alters how the utility operates. Flags are like options or preferences: the utility will usually work perfectly well with the defaults, but sometimes, you want to modify how it works slightly. Flags always start with either one or two dashes (-), and they usually come between the utility and the arguments.
+		~/Desktop is an argument to the utility. Arguments are used when the utility needs to know exactly what you want for a certain action, and there is no clear default setting. You can think of it more like a conversation than an argument: The utility says "I don't know how I should do this!", and you use an argument to say, "Here, this is how you should do it." Arguments usually come at the end of the command, after the utility and the flags (if any flags are used). The number of arguments used generally depends on the utility: some don't need any arguments, some require exactly one argument, some require lots of arguments, and some are flexible in the number of arguments they can take.
+
+	some commands im not already familiar with:
+
+		touch
+
+			touch will create a file with the given argument, running the code
+
+			touch orange.txt
+
+			will create the file orange.txt
+
+		rm -rf
+
+			rm, as you know, deletes a file, using rm -rf will delete all the files and folders in a given directory

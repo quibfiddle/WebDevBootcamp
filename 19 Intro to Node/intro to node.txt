@@ -1,0 +1,31 @@
+Intro to Node
+
+	What is Node?
+
+		a Javascript runtime built on Chromes V8 Javascript engine. Its a backend language that lets you program with JAVASCRIPT YAAAAAH
+
+	Why are we learning it?
+
+		It's Popular!
+
+		It is programed with Javascript, you know, the programing language we ahve already learned.
+
+	it doesn't matter!
+
+		Things change all the time. I may not be programing backend with javascript moving forward.
+
+	We can go into node, provided it is installed on our system or IDE (like our c9 enviorment that has the mean stak installed). On the command line, just type in node, and the cursor will change 
+
+	NPM
+		The largest opensource library ecosystem. Its the package manager for javascript. It lets you install packages into your server instance using the syntax npm install ~packagename~
+
+		so once the package has been installed in your directory, in your javascript you can call up that package with the following javascript
+
+		var whateverYouWantToCallThis = require("PackageName");
+
+		then you can go on to pull up that function by calling up the variable you assigned it.
+
+		whateverYouWantToCallThis();
+
+		1047
+
