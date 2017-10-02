@@ -1,0 +1,38 @@
+Talkin bout express
+
+	npm install [packagename] --save
+
+		npm, is the package manager for Javascript, running the npm command can be used to install different javascript packages.
+
+		the usual argument goes npm install [package name] --save, as you already know.
+
+	npm init
+
+		package.json is a file that contains metadata about the express project, like name arthur, license, githup repo, dependencies and what not. The dependencies of a given project is pretty important
+
+			a package.json file can be created in the terminal using a wizard using the "npm init" command
+
+	--save
+
+		when you install subsequent packages in the same directory as the pckage.json file, if you use the --save flag on the npm install command, it will update the "dependencies" : meta data in the package.json file to include the packages you just installed.
+
+	Route Params
+
+		*
+			use the splat, *, to create a route that will route a git request that doesnt have a specified route, this is useful for creating a 404 error page not found page.
+
+			the code looks like this is the .js file node uses:
+
+				app.get("/*", function(req,res){
+			    res.send("YA DONE F'd UP");
+				});
+
+			be sure to have this catch all * route add the bottom of the order of requests, or the bottom of the .js server file becuase it behaves like an if statement that is always true when deciding to route a request to a given page.
+
+		route paterns
+
+			with many websites its not fesible to hard code routes like
+
+				app.get("/r/GlobalOffensive/comments/73sqwg/immortals_set_to_unveil_zqks/)", function(req,res){
+			    res.send("immortalssettounveilzqks.html");
+				});
