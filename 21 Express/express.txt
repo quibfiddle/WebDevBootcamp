@@ -33,6 +33,27 @@ Talkin bout express
 
 			with many websites its not fesible to hard code routes like
 
-				app.get("/r/GlobalOffensive/comments/73sqwg/immortals_set_to_unveil_zqks/)", function(req,res){
-			    res.send("immortalssettounveilzqks.html");
+				app.get("/r/GlobalOffensive/comments/73sqwg/immortals_set_to_unveil_zqks", function(req,res){
+			    res.send("immortals_set_to_unveil_zqks.html", "globaloffensive.css", "globaloffensive.js" );
 				});
+
+			becuase you would have millions and millions of routes defined. using route Paterns and parameters you can have have path variables in a given route that will route the request correctly. In Express.js you define a path variable with the colon character, so it would look something like this:
+
+				app.get("/r/:subredditName/comments/:id/:title", function(req, res){
+					res.send("Welcome to the comments page!");
+				})
+
+			we will get more into route paterns later, just know that you can print out what the request had for its path variables using console.log(req.params); in the server code, so when a request goes down a particular route with that code, an object containing all the variables shows up in the console, sorta like
+
+				{
+					subredditName: "Global Offensive",
+					id: "73sqwg",
+					title: "immortals_set_to_unveil_zqks",
+				}
+
+			or you can set variables like...
+
+				var subreddit = req.params.subredditName;
+
+			and 
+

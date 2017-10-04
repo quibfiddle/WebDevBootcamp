@@ -1,0 +1,24 @@
+Rendering HTML and Templates
+
+	Use res.render() to render HTML
+		used to respond with a payload, like html file or an embedded javascript file. res.render looks in the view folder in the same directory of the webpage
+
+		res.render("dogs.ejs");
+
+	Explain what EJS is why we use it
+
+		Ejs allows us to populate an html file with variable items for dynamic content
+
+
+	Pass Variables to EJS templates
+
+		so using variables in ejs looks like this; establish the variable in your javascript:
+
+			var thing = req.params.thing;
+			//the payload getting sent back from that request
+			res.send(index.ejs, {thingVar: thing});
+
+		then in your EJS file you can have text be treated as javascript when you close it in the right brackets, like so:
+
+			<h1> Oh snap its: <%= thingVar %></h1>
+

@@ -1,0 +1,12 @@
+#resultTron {
+	opacity: 0;
+	transition: 1s;
+}
+
+.container{
+	margin: 30px;
+}
+
+.jumboTron {
+	width: 90%;
+}
