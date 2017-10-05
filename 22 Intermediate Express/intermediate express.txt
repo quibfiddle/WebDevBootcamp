@@ -1,4 +1,4 @@
-Rendering HTML and Templates
+Rendering HTML and Templates; code details available on my c9 instance under MoreExpress
 
 	Use res.render() to render HTML
 		used to respond with a payload, like html file or an embedded javascript file. res.render looks in the view folder in the same directory of the webpage
@@ -22,3 +22,97 @@ Rendering HTML and Templates
 
 			<h1> Oh snap its: <%= thingVar %></h1>
 
+	EJS can do things other than just display variables passed in from the server code
+
+		we can do inline code that will dynamically include or remove elements from the response:
+
+			<h1>You fell in love with: <%= thingVar.toUpperCase() %></h1>
+
+			<% if(thingVar.toLowerCase() === "rusty"){ %>
+			<p>GOOD CHOICE! RUSTY IS THE BEST!</p>
+			<% } %>
+
+			<p>P.S. this is the love.ejs file!</p>
+
+		In the above ejs code, that <p> will only be included if thingVar === rusty.
+
+	there are a few different types of EJS brackets that contain javascript, and they are used in different scenerios:
+
+		<%= %>
+			what ever is the result of the javascript code within the brackets that include the =s sign is added directly into the html, like
+
+				<p>The number ten looks like <%= 5 + 5 %></p>
+
+			will just add the number 10 to that paragraph element
+
+		<% %>
+			Will not return any results directly to the page, so you use these just for logic, like loops or if statements. like in the Thingvar === rusty example. Note that each line of logic needs to be closed in by these brackets.
+
+		<%- %>
+
+	Servering Custom Assets!
+
+		Properly including Css and JS files
+
+		just like before, use the link tag to link to a style sheet from your EJS file. something like:
+
+			<link rel="stylesheet" href="app.css">
+
+		Then have your app.css file in a folder that is desginated by the node server to serve up those resources. The following code will tell express to make those resouces available in the public folder in the server directory.
+
+			app.use(express.static("public"));
+
+	Partials
+
+		to reduce redundancy in all the different pages on a given server, you can use templates that are included on each page served up by the server.
+
+		by default node looks for partials in the views folder, so to include a partial look at the following EJS code:
+
+			<% include partials/header %>
+
+		This is an example of a header you could include in the top of all the ejs documents for a website.
+
+	Post Requests
+
+		app.post("/postdir" function(req,res){
+
+		})
+
+		res.redirect("/dir where you submited the post usually, or where you want to end up after posting.") here is the node.js code from my post requests lab:
+
+		var express = require("express");
+		var app = express();
+		var bodyParser = require("body-parser");
+
+		app.use(bodyParser.urlencoded({ extended: false }))
+
+		app.set("view engine", "ejs");
+
+		// creates a var friends list
+
+		var friends = ["Tony", "Miranda", "Justin", "Pierre", "Lily"];
+
+		app.get("/", function(req, res){
+		    res.render("home");
+		});
+
+		// this returns the friends.ejs file that is just a page that displays the friends list as a set of LIs
+
+		app.get("/friends", function(req,res){
+		    res.render("friends", {friends: friends});
+		});
+
+		//This is the thing we were going over, its the post request, that listens for a post request, and then takes that post request infor and adds it to the friends list var (there is no permanence to this information, but we will get into that with database STUFFS)
+
+		app.post("/addfriend", function(req,res){
+		    console.log(req.body.newFriend);
+		    var newFriend = req.body.newFriend;
+		    friends.push(newFriend);
+		    console.log(newFriend);
+		    //sort of refreshes the page once it completes the post.
+		    res.redirect("/friends");
+		});
+
+		app.listen(process.env.PORT, process.env.IP, function(){
+		    console.log("Server is running yo'")
+		});
