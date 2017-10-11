@@ -1,0 +1,17 @@
+Intro to API's
+
+	Lets connect with other applications! Stands for Application Program Interface, You worked with them at allcovered building the bitdefender installation scripts!
+
+	ifttt.com chain together apis!
+
+
+	Data returned from an api is usualy contained in XML or JSON files
+
+	we can use api jsons and xmls by setting a variable using the require("request") (the request module needs to be added to your node server to do so) commmand check this out:
+
+		var request = require('request');
+			request('http://www.google.com', function (error, response, body) {
+			  console.log('error:', error); // Print the error if one occurred
+			  console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+			  console.log('body:', body); // Print the HTML for the Google homepage.
+			});
