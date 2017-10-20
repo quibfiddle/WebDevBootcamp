@@ -1,0 +1,23 @@
+REST
+	A mapping between HTTP routes and CRUD
+
+	a recap on CRUD
+
+		Create
+		Read
+		Update
+		Delete
+
+	here is an example of a restful route map for a site that allows for uploads of images:
+
+URL						HTTP Verb		Action
+/photos/				GET				index; list all photos
+/photos/new				GET				new; show new photo form
+/photos					POST			create; creates a new photo, then redirect somewhere
+/photos/:id				GET				show; shows info about a particular photo
+/photos/:id/edit		GET				edit; shows form for editing photo
+/photos/:id				PATCH/PUT		update; updates the photo according the edit form 
+/photos/:id				DELETE			destroy deletes the photo
+
+
+

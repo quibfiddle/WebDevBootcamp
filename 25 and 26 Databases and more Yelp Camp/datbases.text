@@ -1,0 +1,83 @@
+Databases!!!!
+
+	A database is a collection of information and data, and an interface for interacting and editing that data.
+
+	SQL (relational) vs NoSQL (non-relational)
+
+		Relational databases have been around longer, and are perhaps, less flexible for our purposes. Paterns much be defined before entering any information.
+
+		Non-Relational databases are what we are going to be going over in this class. The database structure can be definied as you create database objects.
+
+MongoDB
+
+	The main database that we are going to be using during out class. MongoDB is a non0relational Database.
+
+	How to install in c9:
+
+		sudo apt-get install -y mongodb-org
+
+	More deets:
+
+		https://community.c9.io/t/setting-up-mongodb/171
+
+	So once you have the server running in one tab you can navigate to the same directory where you launched the mongo server in another console, and interface with it using the the command:
+
+		mongo
+
+	doing this will open up the mongo terminal, were you have access to a bunch of different troubleshooting commands.
+
+	in the mongo terminal creating a new database is as simple as using the following command
+
+		use [new db name]
+
+	So working in a database, you can do four main things with db items as outlined in the acryonym CRUD
+
+		Create
+
+			adding to the database in the terminal will look like this:
+
+				db.dogs.insert({name: "rusty", breed: "Mutt"})
+
+			Running this code will create a db item in the dogs collection, that has a name value of Rusty and a breed value of Mutt
+
+		Read
+
+			There are several ways to find database items. The following code will return all the items in the dogs collection
+
+				db.dogs.find()
+
+			The .find command can be past arguments as well to narrow the search, like 
+
+				db.dogs.find({name: "Rusty"})
+
+			this search term would return all items in the dogs collection with the name = to Rusty
+
+		Update
+
+			You can change all the values of a given entry by first selecting it, and then adding in the new information:
+
+				db.dogs.update({name: "Rusty"}, {breed: "Labradoodle"})
+
+			Running this command will search for all items that have the name = to "Rusty", and then change ALL the item values to breed: "Labradoodle", this command would not be too useful here because all the other fields get deleted by this command
+
+			To just add or edit individual items, not overwrite the entire item, just include this in the argurment of the update command:
+
+				db.dogs.update({name: "Rusty"}, {$set: {name: "Tater", isCute: true}});
+
+			including $set will only update existing fields, or create fields if they are not there, not delete fields that existed before running the update command.
+
+		Delete
+
+			the following command will remove all the items in the dogs collection that have the breed of labradoodle
+
+				db.dogs.remove({breed: "labradoodle"})
+
+What is Mongoose?
+
+	Mongoose is an npm module that makes it easier for having our js files interact with our mongo DBs.
+
+		mongoose.connect("mongodb://localhost/yelp_camp", {useMongoClient: true});
+
+Some Restful routes
+
+	index /dogs GET Display a list of all dogs

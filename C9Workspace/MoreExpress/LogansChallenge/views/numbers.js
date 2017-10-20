@@ -1,0 +1,117 @@
+//selects inputs and elements
+
+var input = document.querySelector("input");
+var spell = document.querySelector("#spell");
+var backward = document.querySelector("#backward");
+var digits = document.querySelector("#digits");
+var enhance = document.querySelector("#enhance");
+var resultTron = document.querySelector("#resultTron");
+var resultList = document.querySelector("#resultList");
+
+
+//listens for spell out numbers functionallity
+
+spell.addEventListener("click", function(){
+
+	//grabs the value from the input and splits it into an array of individual values
+
+	var num = input.value;
+	var splitString = num.split("");
+	console.log(splitString);
+	
+	//creates empty variable that we can later increment
+
+	var spelledOut = "";
+
+	//translates the string into letters
+
+	for (var i = 0; i < splitString.length; i++) {
+		if(splitString[i] == 0){
+			var spelledOut = spelledOut + "Zero ";
+		}
+		else if(splitString[i] == 1){
+			var spelledOut = spelledOut + "One "
+		}
+		else if(splitString[i] == 2){
+			var spelledOut = spelledOut + "Two "
+		}
+		else if(splitString[i] == 3){
+			var spelledOut = spelledOut + "Three "
+		}
+		else if(splitString[i] == 4){
+			var spelledOut = spelledOut + "Four "
+		}
+		else if(splitString[i] == 5){
+			var spelledOut = spelledOut + "Five "
+		}
+		else if(splitString[i] == 6){
+			var spelledOut = spelledOut + "Six "
+		}
+		else if(splitString[i] == 7){
+			var spelledOut = spelledOut + "Seven "
+		}
+		else if(splitString[i] == 8){
+			var spelledOut = spelledOut + "Eight "
+		}
+		else if(splitString[i] == 9){
+			var spelledOut = spelledOut + "Nine "
+		}
+	};
+
+		//Changes opacity of results tron prints out the spelledOut result into the results div
+		resultTron.style.opacity = 1;
+
+		var entry = document.createElement("li");
+		entry.appendChild(document.createTextNode(("the numbers in  " + num + " spelt out individually is " + spelledOut)));
+		resultList.appendChild(entry);
+
+});
+
+//Spells out the input backward
+
+backward.addEventListener("click", function(){
+
+	//grabs the value from the input and splits it into an array of individual values
+
+	var num = input.value;
+	var splitString = num.split("");
+	console.log(splitString);
+	
+	//creates empty variable that we can later increment
+
+	var reversed = "";
+
+	//prints out the number in reverse
+
+	for (var i = num.length; i >= 0; i--) {
+		var reversed = reversed + String(num[i]);
+	}
+
+	resultTron.style.opacity = 1;
+	var entry = document.createElement("li");
+	entry.appendChild(document.createTextNode(("Reverseing the order of digits in " + num + " results in " + reversed)));
+	resultList.appendChild(entry);
+
+});
+
+//Evaluates how many digits are in the number
+
+digits.addEventListener("click", function(){
+
+	var num = input.value;
+	var splitString = num.split("");
+	console.log(splitString);
+
+	numOfDigits = 0
+
+	for (var i = 0; i < num.length; i++) {
+		numOfDigits = numOfDigits + 1;
+	}
+
+	resultTron.style.opacity = 1;
+	var entry = document.createElement("li");
+	entry.appendChild(document.createTextNode(("the number of digits in " + num + " is " + numOfDigits)));
+	resultList.appendChild(entry);
+
+
+});
